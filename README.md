@@ -1,6 +1,5 @@
 # WeightedHMM: Flexible HMM Optimization
 The WeightedHMM repository contains MATLAB code to optimize Hidden Markov Models with memory where past observations impact the current output to varying degrees. The algorithm used is an expansion of the HMM optimization approach developed by Professor Chris Wiggins of Columbia and Vahe Galstyan of Caltech, with changes made by Udai Nagpal for added flexibility in optimization. Specifically, the modifications made allow the algorithm to infer the relative importance, or weight, of each past time step's naive observation in determining the current compound observation or measurement. Optimization with weights essentially allows the window size to be inferred in cases where it is unknown, making it useful in solving a wide class of problems.
-----------
-Introduction to the Algorithm
--------------
+
+# Introduction to the Algorithm
 The algorithm developed by Wiggins and Galstyan uses expectation maximization to calculate emission values for the hidden states that are increasingly close to the actual values. Here, however, both the emission values and the weights for each past time step must be calculated. To do so, first the emission values corresponding to each state are optimized (using expectation maximization) with the weights held constant, then the weights are optimized with the emission values held constant, and the cycle continues until both converge to the actual values. 
